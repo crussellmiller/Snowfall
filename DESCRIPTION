@@ -1,6 +1,6 @@
 Package: Snowfall
 Title: Demonstration of package development from Martin Morgan
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: person("Craig", "Miller",
   email = "crmiller@uidaho.edu",
   role = c("aut", "cre"))
