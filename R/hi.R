@@ -13,13 +13,12 @@
 #' # }
 #' @export
 hi <- function(who, how=c("shout", "whisper", "asis")) {
-  stopifnot(
-    is.character(who),
-    length(who)==1,
-    !anyNA(who),
-    nzchar(who)
-  )
+  stopifnot(is_scaler_character(who))
   how <- match.arg(how)   # match.arg checks that user has provided one of possible arguments
   fun <- switch(how, shout=toupper, whisper=tolower, asis=identity)
   paste("hi", fun(who), "how are you?")
+}
+
+is_scaler_character <- function(x){
+  is.character(x) && length(x)==1 && !anyNA(x) && nzchar(x)
 }
